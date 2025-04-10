@@ -20,6 +20,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 }).then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
+const jwtSecret = process.env.JWT_SECRET;
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from backend!' });
 });
